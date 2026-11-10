@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F5EF;
+}
+
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 95px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    /* Perubahan warna background ke putih transparan (80% opacity) */
+    background-color: rgba(255, 255, 255, 0.8);
+
+    /* Efek buram/blur untuk konten yang ada di belakang navbar */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Dukungan untuk browser Safari */
+
+    /* Border tipis transparan agar terlihat lebih elegan */
+    border-bottom: 1px solid rgba(229, 222, 210, 0.5);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+}
+
+.japan-logo {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 43px;
+    font-weight: 700;
+
+    color: #BC002D;
+}
+
+.logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    font-weight: 700;
+
+    color: #382A24;
+}
+
+
+/* NAVIGATION */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+
+    color: #695F57;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #BC002D;
+    transform: translateY(-2px);
+}
+
+.nav-menu a.active {
+    color: #BC002D;
+}
+
+.cities-page {
+    min-height: 100vh;
+    padding: 45px 30px 80px;
+
+    background-color: #F8F5EF;
+}
+
+
+/* HEADING */
+.cities-heading {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: #BC002D;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.cities-heading h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 58px;
+    font-weight: 700;
+    color: #382A24;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.cities-heading>p:last-child {
+    color: #695F57;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+/* CONTAINER */
+#city-container {
+    max-width: 1390px;
+    margin: auto;
+}
+
+/* CARD */
+.city-card {
+    display: flex;
+    width: 100%;
+    min-height: 550px;
+    background-color: #FFFCF9;
+    border: 1px solid #E5DED2;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.city-card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE */
+.city-image {
+    width: 58%;
+    min-height: 550px;
+    overflow: hidden;
+    background-color: #E5DED2;
+}
+
+.city-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.city-card:hover .city-image img {
+    transform: scale(1.04);
+}
+
+/* INFORMATION */
+.city-info {
+    width: 42%;
+    padding: 65px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.city-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    color: #382A24;
+    margin-bottom: 5px;
+}
+
+.city-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-style: italic;
+    color: #BC002D;
+    margin-bottom: 22px;
+}
+
+.city-info p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #695F57;
+    margin-bottom: 25px;
+}
+
+/* TAGS */
+.city-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.city-tags span {
+    background-color: #E3EBD6;
+    color: #38472D;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* SOURCE */
+.city-info a {
+    width: fit-content;
+    color: #BC002D;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.city-info a:hover {
+    color: #85001F;
+}
+
+.loading-text {
+    text-align: center;
+    color: #695F57;
+    padding: 50px;
+}
+
+.hero-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+
+    /* PADDING KHUSUS: 90px (tinggi navbar) + 80px (jarak ekstra) */
+    padding-top: 170px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.hero-section .sub-title {
+    color: #b81d24;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.hero-section .main-title {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    color: #1a1a1a;
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero-section .main-desc {
+    color: #555555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.other-cities-section {
+    max-width: 1390px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+
+/* HEADING */
+.other-cities-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.other-cities-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #382A24;
+    margin-bottom: 10px;
+}
+
+.other-cities-heading>p:last-child {
+    color: #695F57;
+    font-size: 17px;
+}
+
+
+/* CARD CONTAINER */
+#other-cities-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* CITY CARD */
+.small-city-card {
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+    min-height: 240px;
+
+    background-color: #FFFCF9;
+
+    border: 1px solid #E5DED2;
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.small-city-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* IMAGE */
+.small-city-image {
+    width: 32%;
+    min-height: 240px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background-color: #E5DED2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.small-city-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 240px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s;
+}
+
+.small-city-card:hover .small-city-image img {
+    transform: scale(1.05);
+}
+
+
+/* CITY INFORMATION */
+.small-city-info {
+    flex: 1;
+
+    padding: 30px 38px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.small-city-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 35px;
+    font-weight: 700;
+
+    color: #BC002D;
+
+    margin-bottom: 12px;
+}
+
+.small-city-info p {
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #695F57;
+
+    margin-bottom: 15px;
+}
+
+
+/* WIKIPEDIA LINK */
+.small-city-info a {
+    width: fit-content;
+
+    color: #BC002D;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.small-city-info a:hover {
+    color: #85001F;
+    transform: translateX(5px);
+}
+
+
+.site-footer {
+    width: 100%;background-color: #fcf9f2;
+    /* Warna latar krem menyatu dengan desain */
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+    /* Garis pemisah tipis di atas footer */
+    box-sizing: border-box;
+}
+
+/* 1. Logo Kanji Merah */
+.footer-logo {
+    color: #b81d24;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1;
+}
+
+/* 2. Navigasi Link Interaktif */
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* Jarak antar link menu */
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Efek saat cursor diarahkan ke menu footer */
+.footer-nav a:hover {
+    color: #b81d24;
+    /* Berubah menjadi merah saat disentuh */
+}
+
+/* 3. Teks Keterangan di Bagian Bawah */
+.footer-text {
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+

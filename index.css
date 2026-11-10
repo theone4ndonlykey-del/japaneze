@@ -1,0 +1,647 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F5EF;
+}
+
+
+
+.navbar {
+    width: 100%;
+    height: 95px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 45px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(229, 222, 210, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+}
+
+.japan-logo {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 43px;
+    font-weight: 700;
+
+    color: #BC002D;
+}
+
+.logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    font-weight: 700;
+
+    color: #382A24;
+}
+
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+
+    color: #695F57;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #BC002D;
+    transform: translateY(-2px);
+}
+
+.nav-menu a.active {
+    color: #BC002D;
+}
+
+
+
+.hero {
+    min-height: 725px;
+    height: calc(100vh - 95px);
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 40px;
+
+    background-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=2000&q=90'
+        );
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.70));
+}
+
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1050px;
+
+    color: white;
+}
+
+
+.hero-subtitle {
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+
+    color: #F8F5EF;
+}
+
+
+/* MAIN HEADING */
+.hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(55px, 6vw, 100px);
+
+    font-weight: 700;
+    line-height: 1.05;
+
+    margin-bottom: 28px;
+}
+
+
+
+.hero-description {
+    font-size: 20px;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    max-width: 850px;
+
+    margin-bottom: 38px;
+}
+
+
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 17px 38px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+
+.btn-primary {
+    background-color: #BC002D;
+    color: white;
+
+    border: 2px solid #BC002D;
+}
+
+.btn-primary:hover {
+    background-color: #920020;
+    border-color: #920020;
+
+    transform: translateY(-4px);
+}
+
+
+
+.btn-secondary {
+    color: white;
+
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background-color: transparent;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #242424;
+
+    transform: translateY(-4px);
+}
+
+
+
+.placeholder-section {
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 50px 20px;
+    text-align: center;
+
+    background-color: #F8F5EF;
+}
+
+.placeholder-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    color: #242424;
+}
+
+.placeholder-section p {
+    color: #695F57;
+}
+
+
+.stats-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 24px;
+    flex: 1 1 220px;
+    max-width: 270px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card .title-red {
+    color: #b81d24;
+    font-size: 2.8rem;
+    font-weight: 700;
+    font-family: 'Georgia', serif;
+    margin: 0 0 12px 0;
+    line-height: 1;
+}
+
+
+.card h6 {
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+
+.card p {
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.explore-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.explore-section .sub-title {
+    color: #b81d24;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.explore-section .section-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+
+.explore-section .section-desc {
+    color: #666666;
+    font-size: 1rem;
+    margin: 0 0 40px 0;
+}
+
+/* Grid layout untuk 3 card gambar */
+.explore-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Kustomisasi Card Gambar (Link) */
+.explore-card {
+    position: relative;
+    width: 350px;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Menjaga agar zoom gambar tidak keluar dari radius card */
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Element Gambar di dalam Card */
+.explore-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Efek smooth zoom */
+}
+
+/* Efek Lapisan Gelap (Overlay) agar teks terlihat jelas */
+.explore-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.75) 100%);
+    transition: background 0.3s ease;
+}
+
+/* Konten Teks di dalam Card Gambar */
+.explore-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    text-align: left;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.explore-content h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    margin: 0 0 6px 0;
+    font-weight: 400;
+}
+
+.explore-content p {
+    font-size: 0.9rem;
+    margin: 0 0 12px 0;
+    color: #e0e0e0;
+    line-height: 1.4;
+}
+
+.explore-content .explore-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    border-bottom: 2px solid #b81d24;
+    /* Garis merah di bawah teks tombol */
+    padding-bottom: 2px;
+    display: inline-block;
+}
+
+/* --- EFEK HOVER --- */
+/* Saat cursor menyentuh card, gambar membesar secara halus */
+.explore-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Gelapkan sedikit overlay saat di-hover */
+.explore-card:hover .explore-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+/* Container Utama Section Sorotan */
+.highlights-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.highlights-section .sub-title {
+    color: #b81d24;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.highlights-section .section-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.4rem;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+
+.highlights-section .section-desc {
+    color: #666666;
+    font-size: 1rem;
+    margin: 0 0 40px 0;
+}
+
+/* Grid Layout 3 Kolom */
+.highlights-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Desain Utama Card (Tanpa Efek Hover) */
+.highlight-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 350px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Penampung Gambar */
+.card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Area Teks di Bawah Gambar */
+.card-body {
+    padding: 24px;
+    text-align: left;
+    flex: 1;
+}
+
+.card-body h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.35rem;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.card-body p {
+    color: #b81d24;
+    /* Teks deskripsi berwarna merah */
+    font-style: italic;
+    /* Teks miring sesuai gambar */
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.fun-facts-section {
+    width: 100%;
+    background-color: #e2ebd8;
+    /* Latar belakang hijau muda khas contoh gambar */
+    margin-top: 80px;
+    /* Jarak dari section di atasnya */
+    padding: 60px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.fun-facts-section .sub-title {
+    color: #b81d24;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.fun-facts-section .section-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin: 0 0 40px 0;
+    font-weight: 400;
+}
+
+/* Penampung List Kotak Fakta */
+.facts-container {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Jarak antar baris kotak fakta */
+}
+
+/* Desain Setiap Kotak Fakta */
+.fact-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    text-align: left;
+}
+
+/* Bulatan Merah (Bullet Point) */
+.fact-card .bullet-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #b81d24;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Teks Deskripsi Fakta */
+.fact-card p {
+    color: #2b2b2b;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.site-footer {
+    width: 100%;
+    background-color: #fcf9f2;
+    /* Warna latar krem menyatu dengan desain */
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+    /* Garis pemisah tipis di atas footer */
+    box-sizing: border-box;
+}
+
+/* 1. Logo Kanji Merah */
+.footer-logo {
+    color: #b81d24;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1;
+}
+
+/* 2. Navigasi Link Interaktif */
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* Jarak antar link menu */
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Efek saat cursor diarahkan ke menu footer */
+.footer-nav a:hover {
+    color: #b81d24;
+    /* Berubah menjadi merah saat disentuh */
+}
+
+/* 3. Teks Keterangan di Bagian Bawah */
+.footer-text {
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
